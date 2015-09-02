@@ -67,7 +67,7 @@ gradle downloadWrapper
 [ "%{buildroot}" != "/" ] && %{__rm} -rf %{buildroot}
 
 %{__mkdir_p} %{buildroot}/opt/%{name}-%{version}
-%{__cp} -R * %{buildroot}/opt/%{name}-%{version}
+cp -R * %{buildroot}/opt/%{name}-%{version}
 %{__mkdir_p} %{buildroot}/var/log/kafka
 %{__mkdir_p} %{buildroot}/etc/rc.d/init.d
 install -m 755 %{S:1} %{buildroot}/etc/rc.d/init.d/kafka
